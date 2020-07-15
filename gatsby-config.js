@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Helium`,
-    description: `Speed up your Gatsby development workflow.`,
-    keywords: [`gatsby`, `theme`, `react`, `blog`],
-    author: `Eric Howey`,
-    siteUrl: `https://gatsby-starter-catalyst-helium.netlify.app`, //Change to you site address, required for sitemap.xml and robots.txt file among other things
+    title: `Wamaitha`,
+    description: `Wamaitha's blog on machine learning`,
+    keywords: [`machine learning`,`datascientist in kenya`, `datascience `, `machine learning for your business`, `blog`],
+    author: `Wamaitha Nyamu`,
+    siteUrl: `https://www.wamaithanyamu.com`, //Change to you site address, required for sitemap.xml and robots.txt file
+    // among other things
     menuLinks: [
       {
-        name: `About`,
-        link: `/about`,
+        name: `Blog`,
+        link: `/`,
         type: `internal`, //internal or anchor
       },
       {
@@ -25,17 +26,17 @@ module.exports = {
     socialLinks: [
       {
         name: `Email`,
-        link: `eric@erichowey.dev`,
+        link: `hello@wamaithanyamu.com`,
         location: `footer`, //Options are "all", "header", "footer"
       },
       {
         name: `Github`,
-        link: `https://www.github.com/ehowey`,
+        link: `https://www.github.com/wamaithanyamu`,
         location: `all`, //Options are "all", "header", "footer"
       },
       {
         name: `Twitter`,
-        link: `https://www.twitter.com/erchwy`,
+        link: `https://www.twitter.com/wamaithanyamu`,
         location: `all`, //Options are "all", "header", "footer"
       },
     ],
@@ -53,6 +54,7 @@ module.exports = {
         excerptLength: 200,
         // Helium
         useHero: true,
+        useKatex:true,
       },
     },
     {

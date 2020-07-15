@@ -49,7 +49,7 @@ const Hero = () => {
             borderWidth: "4px",
             borderStyle: "solid",
           }}
-          alt="Catalyst Helium"
+          alt="Wamaitha Nyamu"
         />
         <div
           sx={{
@@ -64,19 +64,18 @@ const Hero = () => {
           }}
         >
           <Styled.p
-            sx={{
-              fontSize: [4, 5, 6, null, null],
-              lineHeight: "snug",
-              my: 4,
-              color: baseColors.gray[8],
-            }}
+              sx={{
+                fontSize: [4, 5, 6, null, null],
+                lineHeight: "snug",
+                my: 4,
+                color: baseColors.gray[8],
+              }}
           >
-            Hello there! My name is <b>Charlie Rose</b> and I am an excellent
-            human being and <b>bold</b> writer.
+            Hello there! My name is <b>Wamaitha</b> and I am part of the human race. <b>Introversion</b> is my tribe. Survival is my skill. <b>Reading</b> is my escape. <b>Coding</b> is my art.
           </Styled.p>
           <Button
             as={Link}
-            to="/contact"
+            to="/contacts"
             sx={{
               fontSize: [2, 3, null, null, null],
               fontWeight: "bold",
@@ -92,7 +91,7 @@ const Hero = () => {
               },
             }}
           >
-            Hire Me
+          Say hi
           </Button>
         </div>
       </div>
