@@ -48,6 +48,7 @@ module.exports = {
         // Core theme
         displaySiteLogo: false,
         displaySiteLogoMobile: false,
+        useColorMode:false,
         footerContentLocation: "right",
         remarkImagesWidth: 1920,
         // Blog theme
