@@ -75,7 +75,7 @@ const Hero = () => {
           </Styled.p>
           <Button
             as={Link}
-            to="/contacts"
+            to="/contact"
             sx={{
               fontSize: [2, 3, null, null, null],
               fontWeight: "bold",
