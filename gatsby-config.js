@@ -70,6 +70,13 @@ module.exports = {
         icon: `content/assets/catalyst-site-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `content/posts/`,
+},
+},
 
     {
       resolve: `gatsby-plugin-netlify-cms`,

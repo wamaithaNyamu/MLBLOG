@@ -7,6 +7,7 @@
   "dependencies": {
     "gatsby": "^2.23.7",
     "gatsby-plugin-netlify-cms": "^4.3.11",
+    "gatsby-source-filesystem": "^2.3.20",
     "gatsby-theme-catalyst-helium": "^1.1.0",
     "netlify-cms-app": "^2.12.18",
     "react": "^16.13.1",
