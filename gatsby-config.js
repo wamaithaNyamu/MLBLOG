@@ -61,8 +61,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-catalyst`,
-        short_name: `catalyst`,
+        name: `Wamaitha`,
+        short_name: `wamaitha`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
@@ -70,7 +70,11 @@ module.exports = {
         icon: `content/assets/catalyst-site-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify`,
+
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+
+    },
+
   ],
 }
