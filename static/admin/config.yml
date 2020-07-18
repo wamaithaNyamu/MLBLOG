@@ -1,15 +1,29 @@
 backend:
   name: github
   repo:https://github.com/wamaithaNyamu/MLBLOG
-media_folder: static/assets
-public_folder: /assets
+media_folder: content/assets
+public_folder: content/assets
 collections:
   - name: blog
     label: Blog
-    folder: blog
+    folder: ../../content/posts
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
+      - { name: "slug", label: "Slug" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "title", label: "Title",widget: "string" }
+      - { name: "subTitle", label: "subTitle",widget: "string" }
+      - { name: "author", label: "author",widget: "string" }
+      - { name: "authorLink", label: "authorLink",widget: "string" }
+      - { name: "categories", label: "categories",widget: "string" }
+      - { name: "featuredImage", label: "featuredImage", widget: "image" }
+      - { name: "socialImage", label: "socialImage" ,widget: "image"}
+      - { name: "featuredImageCaption", label: "featuredImageCaption", widget: "string" }
+      - {label: "Body", name: "body", widget: "markdown"}
+
+
+
+
+
+
       - { name: body, label: Body, widget: markdown }
