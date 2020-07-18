@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: https://github.com/wamaithaNyamu/MLBLOG
+  name: git-gateway
 media_folder: static/assets
 public_folder: /assets
 collections:
