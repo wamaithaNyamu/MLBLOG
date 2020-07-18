@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo:https://github.com/wamaithaNyamu/MLBLOG
+  repo: https://github.com/wamaithaNyamu/MLBLOG
 media_folder: content/assets
 public_folder: content/assets
 collections:
