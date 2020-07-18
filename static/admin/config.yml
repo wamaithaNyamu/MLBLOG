@@ -6,6 +6,9 @@ collections:
   - name: blog
     label: Blog
     folder: content/posts
+    extension: mdx
+    format: frontmatter
+    identifier_field: name
     create: true
     fields:
       - { name: slug, label: Slug, widget: string}
