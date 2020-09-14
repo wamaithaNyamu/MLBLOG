@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      avatar: file(relativePath: { eq: "avatar.jpg" }) {
+      avatar: file(relativePath: { eq: "avatar.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
