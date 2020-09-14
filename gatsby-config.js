@@ -27,7 +27,7 @@ module.exports = {
       {
         name: `Email`,
         link: `hello@wamaithanyamu.com`,
-        location: `footer`, //Options are "all", "header", "footer"
+        location: `all`, //Options are "all", "header", "footer"
       },
       {
         name: `Github`,
@@ -48,7 +48,7 @@ module.exports = {
         // Core theme
         displaySiteLogo: false,
         displaySiteLogoMobile: false,
-        // useColorMode:false,
+        useColorMode:false,
         footerContentLocation: "right",
         remarkImagesWidth: 1920,
         // Blog theme

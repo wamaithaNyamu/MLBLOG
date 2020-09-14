@@ -19,3 +19,38 @@ Runda is a suburb in the heart of Nairobi. Its an estate of the who is who in th
 the class of citizens that live here, it is expected that the price of land and houses are off the roof (well, from
 the common mwananchis perspective anyway). This notebook walks through investigating housing prices in Runda. The
 data has been scrapped from BuyRentKenya. Full code for this tutorial series can be found     [here](https://github.com/wamaithaNyamu/RUNDAHOUSES/)
+
+```python
+
+# cleaning
+def clean_description(text):
+  """
+  args text {String} the description of the current house
+  return text {String} returns a string of the preprocessed description
+
+  """
+  pattern = re.compile(r'((?<=[^\W[A-Z])[A-Z]|(?<=\S)[A-Z](?=[a-z]))')
+  # removing paragraph numbers
+  text = re.sub('[0-9]+.\t','',str(text))
+  # removing new line
+  text = re.sub('\n ','',str(text))
+
+  text = re.sub('\\n',' ',str(text))
+  # removing apostrophes
+  text = re.sub("'s",'',str(text))
+  # removing commas
+  text = re.sub(",",'',str(text))
+  # remove astreisk
+  # text = re.sub("*",'',str(text))
+  # removing hyphens
+  text = re.sub("-",' ',str(text))
+  text = re.sub("— ",'',str(text))
+  # add space between words with caps
+  text = pattern.sub(r' \1', str(text))
+
+
+
+
+  return text
+
+```

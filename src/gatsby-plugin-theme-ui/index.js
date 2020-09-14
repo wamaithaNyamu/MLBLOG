@@ -5,11 +5,11 @@ import { darken } from "@theme-ui/color"
 
 export default merge(BaseTheme, {
   colors: {
-    primary: "#e6da00",
-    secondary: "#9933CC",
-    muted: "#ecf3f8",
-    accent: "#ffffff",
-    link: "#9933CC",
+    primary: "#b80e65",
+    secondary: "#b80e65",
+    muted: "#13131f",
+    accent: "#757778",
+    link: "#e6da00",
     header: {
       background: "transparent",
       backgroundOpen: baseColors.gray[2],
@@ -25,29 +25,29 @@ export default merge(BaseTheme, {
       icons: baseColors.gray[8],
     },
     // You can delete dark mode by removing the "mode" object and/or setting useColorMode to false in gatsby-theme-catalyst-core
-    modes: {
-      dark: {
-        primary: "#e6da00",
-        secondary: "#9933CC",
-        muted: "#1a2431",
-        accent: "#363636",
-        link: "#e6da00",
-        header: {
-          background: "transparent",
-          text: baseColors.gray[1],
-          textOpen: baseColors.gray[1],
-          backgroundOpen: baseColors.gray[8],
-          icons: baseColors.gray[1],
-          iconsOpen: baseColors.gray[1],
-        },
-        footer: {
-          background: "transparent",
-          text: baseColors.gray[1],
-          links: baseColors.gray[1],
-          icons: baseColors.gray[1],
-        },
-      },
-    },
+    // modes: {
+    //   dark: {
+    //     primary: "#e6da00",
+    //     secondary: "#9933CC",
+    //     muted: "#1a2431",
+    //     accent: "#363636",
+    //     link: "#e6da00",
+    //     header: {
+    //       background: "transparent",
+    //       text: baseColors.gray[1],
+    //       textOpen: baseColors.gray[1],
+    //       backgroundOpen: baseColors.gray[8],
+    //       icons: baseColors.gray[1],
+    //       iconsOpen: baseColors.gray[1],
+    //     },
+    //     footer: {
+    //       background: "transparent",
+    //       text: baseColors.gray[1],
+    //       links: baseColors.gray[1],
+    //       icons: baseColors.gray[1],
+    //     },
+    //   },
+    // },
   },
   sizes: {
     ...tailwind.sizes,
