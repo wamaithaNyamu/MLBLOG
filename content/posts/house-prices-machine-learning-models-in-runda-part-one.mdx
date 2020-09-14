@@ -17,40 +17,104 @@ datascience project for determining housing prices in runda" />
 
 Runda is a suburb in the heart of Nairobi. Its an estate of the who is who in the country. Due to the status quo of
 the class of citizens that live here, it is expected that the price of land and houses are off the roof (well, from
-the common mwananchis perspective anyway). This notebook walks through investigating housing prices in Runda. The
-data has been scrapped from BuyRentKenya. Full code for this tutorial series can be found     [here](https://github.com/wamaithaNyamu/RUNDAHOUSES/)
+the common mwananchis perspective anyway).
 
-```python
+The main objective for this series is as follows :
+* Setup our environment (You are here)
+* Scrape data from [buyrentkenya.com](https://buyrentkenya.com)
+* Clean the data
+* Exploratory Data Analysis (EDA)
+* Build machine learning models
+* Conclusion on findings
+* Make a webapp to query the model
 
-# cleaning
-def clean_description(text):
-  """
-  args text {String} the description of the current house
-  return text {String} returns a string of the preprocessed description
+In order to get the data we need. We’ll make use of puppeteer which is a headless chrome browser. There are many ways
+ to go about webscrapping. For this case, I have decided to first scrape all the links for each ad, then open each link and scrape all the details we need about the ad. We’ll store the data to mongodb atlas.
+# Environment setup
 
-  """
-  pattern = re.compile(r'((?<=[^\W[A-Z])[A-Z]|(?<=\S)[A-Z](?=[a-z]))')
-  # removing paragraph numbers
-  text = re.sub('[0-9]+.\t','',str(text))
-  # removing new line
-  text = re.sub('\n ','',str(text))
+### Installing our dependencies.
+There's an assumption that you have python3, nodejs, npm and pip installed on your system.
 
-  text = re.sub('\\n',' ',str(text))
-  # removing apostrophes
-  text = re.sub("'s",'',str(text))
-  # removing commas
-  text = re.sub(",",'',str(text))
-  # remove astreisk
-  # text = re.sub("*",'',str(text))
-  # removing hyphens
-  text = re.sub("-",' ',str(text))
-  text = re.sub("— ",'',str(text))
-  # add space between words with caps
-  text = pattern.sub(r' \1', str(text))
+1 . Puppeteer - headless chrome driver (takes a while because it also download chromium)
 
-
-
-
-  return text
+```javascript
+    npm install --save puppeteer
 
 ```
+2. Mongoose - connects our script to mongodb atlas from node.js
+
+
+```javascript
+    npm install --save mongoose
+
+```
+
+3. Dotenv - for accessing our environmental variables from nodejs
+
+```javascript
+    npm install --save dotenv
+```
+
+4. Pymongo - connects our script to mongodb atlas from python
+
+```python
+    pip install pymongo
+
+```
+
+5. python_dotenv - for accessing our environmental variables from python
+
+```python
+   pip install python-dotenv
+
+```
+
+6. Mongodb Atlas needs to be setup
+
+Go to [mongodb.com](https://mongodb.com) and signup for an account if you don't already have one.
+
+* Make a new project
+![make a new mongodb project](../assets/runda_homes/new_project.png)
+
+* Give it a name.
+![name mongodb project](../assets/runda_homes/project_name_mongodb.png)
+
+
+* Create a free cluster
+![Create a free cluster mongodb ](../assets/runda_homes/free_cluster.png)
+
+* Use the defaults or any options you want. I'll leave everything to default
+* Name your cluster
+![Name your cluster mongodb](../assets/runda_homes/cluster_name.png)
+* Wait for cluster to be deployed
+![cluster to be deployed](../assets/runda_homes/wait_deploy.png)
+* Click on connect to connect to your application
+![connect to your application](../assets/runda_homes/connect_your_application.png)
+
+* Add ip to anywhere
+![ip to anywhere  mongodb](../assets/runda_homes/add_ip.png)
+
+* Create database username
+![database username mongodb](../assets/runda_homes/create_db_username.png)
+
+* Choose connection method - pick nodejs and the latest version of node or one that is compatible to your system.
+Copy the mongo uri for later use.
+![Choose connection method mongodb](../assets/runda_homes/mongo_uri.png)
+
+Create the folder you’ll be working on. Il’l use  RUNDAHOMES. Open your IDE on this folder. Make a  .env file
+
+```javascript
+ #RUNDAHOMES/.env
+ MONGOURI = mongodb+srv://Wamaitha:<password>@clustername.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+```
+Replace password (angle brackets included) with the password you used to create your user. Replace dbname (angle brackets included)with any name you want to name your database, I’ll use RundaHomes.
+Your uri should now be in the form
+```javascript
+ #RUNDAHOMES/.env
+ MONGOURI = mongodb+srv://Wamaitha:*******@clustername.mongodb.net/RundaHomes?retryWrites=true&w=majority.
+
+```
+Our environment is all set. Lets get scraping in the next post
+![Let get to work gif](https://media.giphy.com/media/l0HlxXjxUPD6W9Avm/giphy.gif)
+
