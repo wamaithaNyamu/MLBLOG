@@ -1,0 +1,137 @@
+---
+title: How to buy a house in Runda (part three)
+subTitle: Part Three - Convert json from mongodb to csv
+date: 2020-08-14
+author: Wamaitha Nyamu
+authorLink: https://instagram.com/mlforbusiness
+categories: [RundaHouses]
+featuredImage: ../assets/runda_homes_cover.png
+socialImage: ../assets/runda_homes_cover.png
+featuredImageCaption: Photo by Wamaitha Nyamu
+
+
+---
+<SEO title="Using machine learning techniques to deterimine housing prices in runda" description="End to end
+datascience project for determining housing prices in runda" />
+
+
+In this post we'll be connecting to mongodb, transforming the data to .csv
+
+For this section we'll be switching to python so that we can make use of the pandas library.
+![lez do dis](https://media.giphy.com/media/XF473WvO789XMBz4qQ/giphy.gif)
+Make a new file to_csv.py
+
+Install the dependencies
+
+1. Pandas - to convert json to csv
+
+```python
+    pip install pandas
+```
+2. Pymongo - connects our script to mongodb atlas from python
+
+```python
+    pip install pymongo
+
+```
+
+3. python_dotenv - for accessing our environmental variables from python
+
+```python
+   pip install python-dotenv
+
+```
+
+Make a file to_csv.py and import our dependencies
+
+```python
+import pymongo
+import pandas as pd
+import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
+
+```
+
+Get our mongouri from the .env file from python
+
+```python
+
+MONGOURI = os.environ.get("MONGOURI")
+```
+
+Connect to mongo db and get all our data
+
+```python
+
+data = []
+def connect_to_mongo():
+    myclient = pymongo.MongoClient(MONGOURI)
+    mydb = myclient["RundaHomes"]
+    mycollection = mydb["rundahouses"]
+    cursor = mycollection.find({})
+    print(cursor)
+    for doc in cursor:
+        print(doc)
+        data.append(doc)
+
+
+
+```
+I've used the same database name in my mongouri and my collection name I used in the previous step. Mongo returns a
+cursor and we have to iterate through it to get to individual entries. The documents are appended to the data list.python
+
+The list is in form of json. To convert to csv we call the to_csv method from python and then save the data to an
+external file runda_house.csv
+
+```python
+def convert_json_to_csv(data):
+    df = pd.DataFrame(data)
+    df.to_csv(r'./runda-houses.csv', index=None)
+
+
+```
+Finally call all the functions. Our final looks like this :
+
+```python
+
+
+import pymongo
+import pandas as pd
+import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
+MONGOURI = os.environ.get("MONGOURI")
+
+data = []
+
+
+def connect_to_mongo():
+    myclient = pymongo.MongoClient(MONGOURI)
+    mydb = myclient["RundaHomes"]
+    mycollection = mydb["rundahouses"]
+    cursor = mycollection.find({})
+    print(cursor)
+    for doc in cursor:
+        print(doc)
+        data.append(doc)
+
+
+def convert_json_to_csv(data):
+    df = pd.DataFrame(data)
+    df.to_csv(r'./runda-houses.csv', index=None)
+
+
+if __name__ == "__main__":
+    connect_to_mongo()
+    convert_json_to_csv(data)
+
+```
+
+That's it! Now to data cleaning.
+
+![](https://media.giphy.com/media/UVekzifi3M3P84hOYk/giphy.gif)
