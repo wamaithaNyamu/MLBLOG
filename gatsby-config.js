@@ -47,7 +47,7 @@ module.exports = {
       options: {
         // Core theme
         displaySiteLogo: false,
-        displaySiteLogoMobile: falsegit,
+        displaySiteLogoMobile: false,
         useColorMode:false,
         footerContentLocation: "right",
         remarkImagesWidth: 1920,
