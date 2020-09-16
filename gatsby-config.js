@@ -46,8 +46,8 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-helium`,
       options: {
         // Core theme
-        displaySiteLogo: true,
-        displaySiteLogoMobile: true,
+        displaySiteLogo: false,
+        displaySiteLogoMobile: falsegit,
         useColorMode:false,
         footerContentLocation: "right",
         remarkImagesWidth: 1920,
