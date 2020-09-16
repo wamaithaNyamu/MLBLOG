@@ -46,8 +46,8 @@ module.exports = {
       resolve: `gatsby-theme-catalyst-helium`,
       options: {
         // Core theme
-        displaySiteLogo: false,
-        displaySiteLogoMobile: false,
+        displaySiteLogo: true,
+        displaySiteLogoMobile: true,
         useColorMode:false,
         footerContentLocation: "right",
         remarkImagesWidth: 1920,
@@ -67,7 +67,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `content/assets/catalyst-site-icon.png`, // This path is relative to the root of the site.
+        icon: `content/assets/avatar.png`, // This path is relative to the root of the site.
       },
     },
     {
