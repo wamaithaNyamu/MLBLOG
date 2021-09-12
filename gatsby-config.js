@@ -39,6 +39,11 @@ module.exports = {
         link: `https://www.twitter.com/wamaithanyamu`,
         location: `all`, //Options are "all", "header", "footer"
       },
+      {
+        name: `Instagram`,
+        link: `https://www.instagram.com/wamaithanyamu`,
+        location: `all`, //Options are "all", "header", "footer"
+      },
     ],
   },
   plugins: [

@@ -11,6 +11,7 @@
     "gatsby-theme-catalyst-helium": "^1.1.0",
     "netlify-cms-app": "^2.12.18",
     "react": "^16.13.1",
+    "gatsby-cli": "^3.13.0",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
@@ -23,7 +24,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
